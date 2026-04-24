@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0A1628;
+  --color-accent: #00E5B4;
+  --color-accent-soft: #E8FBF6;
+  --color-text: #1A1A2E;
+  --color-text-light: #6B7280;
+  --color-white: #FFFFFF;
+  --color-surface: #F8FFFE;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes chatBubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chat-bubble-in {
+  animation: chatBubbleIn 0.3s ease-out both;
+}
