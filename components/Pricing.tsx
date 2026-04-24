@@ -38,8 +38,8 @@ const plans = [
   },
   {
     name: "Clínica Digital",
-    price: "697",
-    setup: "497",
+    price: null,
+    setup: null,
     tagline: "Automatización completa",
     popular: false,
     features: [
@@ -50,7 +50,7 @@ const plans = [
       "Informes mensuales de conversiones",
       "Gestor de cuenta dedicado",
     ],
-    cta: "Empezar con Clínica Digital",
+    cta: "Solicitar presupuesto",
   },
 ];
 
@@ -114,29 +114,42 @@ export default function Pricing() {
               </div>
 
               <div>
-                <div className="flex items-end gap-1">
-                  <span
-                    className={`font-fraunces text-5xl font-bold ${
-                      plan.popular ? "text-white" : "text-primary"
-                    }`}
-                  >
-                    {plan.price}€
-                  </span>
-                  <span
-                    className={`text-sm mb-2 ${
-                      plan.popular ? "text-white/60" : "text-text-light"
-                    }`}
-                  >
-                    /mes
-                  </span>
-                </div>
-                <p
-                  className={`text-xs mt-1 ${
-                    plan.popular ? "text-white/50" : "text-text-light"
-                  }`}
-                >
-                  Setup inicial: {plan.setup}€ (único)
-                </p>
+                {plan.price ? (
+                  <>
+                    <div className="flex items-end gap-1">
+                      <span
+                        className={`font-fraunces text-5xl font-bold ${
+                          plan.popular ? "text-white" : "text-primary"
+                        }`}
+                      >
+                        {plan.price}€
+                      </span>
+                      <span
+                        className={`text-sm mb-2 ${
+                          plan.popular ? "text-white/60" : "text-text-light"
+                        }`}
+                      >
+                        /mes
+                      </span>
+                    </div>
+                    <p
+                      className={`text-xs mt-1 ${
+                        plan.popular ? "text-white/50" : "text-text-light"
+                      }`}
+                    >
+                      Setup inicial: {plan.setup}€ (único)
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="font-fraunces text-3xl font-bold text-primary">
+                      Presupuesto personalizado
+                    </p>
+                    <p className="text-text-light text-xs mt-1">
+                      Valoramos juntos la integración con tu sistema
+                    </p>
+                  </>
+                )}
               </div>
 
               <ul className="flex flex-col gap-3 flex-1">
