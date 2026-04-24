@@ -13,6 +13,12 @@ type FormData = {
   mensaje: string;
 };
 
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -28,10 +34,10 @@ export default function Contact() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contacto", ...data }),
       });
       if (!res.ok) throw new Error("Error al enviar");
       setSubmitted(true);
@@ -45,6 +51,17 @@ export default function Contact() {
   return (
     <section id="contacto" className="py-24 bg-primary">
       <div className="max-w-3xl mx-auto px-6">
+
+        {/* Formulario oculto para que Netlify lo detecte en el build */}
+        <form name="contacto" data-netlify="true" hidden>
+          <input type="text" name="nombre" />
+          <input type="text" name="clinica" />
+          <select name="tipo" />
+          <input type="tel" name="telefono" />
+          <select name="volumen" />
+          <textarea name="mensaje" />
+        </form>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,9 +98,13 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             onSubmit={handleSubmit(onSubmit)}
+            name="contacto"
+            data-netlify="true"
             className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col gap-5"
             noValidate
           >
+            <input type="hidden" name="form-name" value="contacto" />
+
             {/* Row 1 */}
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
@@ -93,9 +114,7 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Ana García"
-                  {...register("nombre", {
-                    required: "El nombre es obligatorio",
-                  })}
+                  {...register("nombre", { required: "El nombre es obligatorio" })}
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
                 {errors.nombre && (
@@ -109,9 +128,7 @@ export default function Contact() {
                 <input
                   type="text"
                   placeholder="Clínica Dental Sonrisa"
-                  {...register("clinica", {
-                    required: "El nombre de la clínica es obligatorio",
-                  })}
+                  {...register("clinica", { required: "El nombre de la clínica es obligatorio" })}
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-accent transition-colors"
                 />
                 {errors.clinica && (
@@ -130,9 +147,7 @@ export default function Contact() {
                   {...register("tipo", { required: "Selecciona el tipo de clínica" })}
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent transition-colors appearance-none"
                 >
-                  <option value="" className="text-gray-800">
-                    Selecciona...
-                  </option>
+                  <option value="" className="text-gray-800">Selecciona...</option>
                   <option value="dental" className="text-gray-800">Dental</option>
                   <option value="fisioterapia" className="text-gray-800">Fisioterapia</option>
                   <option value="estetica" className="text-gray-800">Estética</option>
@@ -173,9 +188,7 @@ export default function Contact() {
                 {...register("volumen", { required: "Este campo es obligatorio" })}
                 className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent transition-colors appearance-none"
               >
-                <option value="" className="text-gray-800">
-                  Selecciona...
-                </option>
+                <option value="" className="text-gray-800">Selecciona...</option>
                 <option value="menos10" className="text-gray-800">Menos de 10</option>
                 <option value="10-30" className="text-gray-800">Entre 10 y 30</option>
                 <option value="mas30" className="text-gray-800">Más de 30</option>
