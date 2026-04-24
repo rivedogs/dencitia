@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <span className="font-fraunces text-2xl font-bold text-white">Dencitia</span>
             <p className="text-white/40 text-sm mt-1">
-              El asistente de IA para clínicas que nunca duerme
+              Agencia digital especializada en clínicas dentales
             </p>
           </div>
 

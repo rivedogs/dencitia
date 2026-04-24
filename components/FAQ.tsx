@@ -5,28 +5,28 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "¿Mis pacientes sabrán que están hablando con una IA?",
-    a: "El agente puede presentarse como el asistente virtual de tu clínica. Muchas clínicas prefieren esta opción — los pacientes valoran la rapidez por encima de todo. Si lo prefieres, también puede derivar a una persona real cuando la consulta lo requiera.",
+    q: "¿Por qué una agencia especializada en dentistas y no una agencia generalista?",
+    a: "Porque conocemos el sector. Sabemos qué servicios buscan los pacientes, cómo hablan, qué les preocupa antes de ir al dentista y qué convierte mejor en una clínica dental. Una agencia generalista tiene que aprenderlo desde cero contigo.",
   },
   {
-    q: "¿Necesito cambiar mi número de WhatsApp?",
-    a: "No. Conectamos el agente a tu número actual de WhatsApp Business. Tus pacientes escriben como siempre.",
+    q: "¿Cuánto tiempo tarda en verse resultados?",
+    a: "Depende del servicio. Con publicidad (Google Ads, Meta Ads) los primeros resultados se ven en 2-4 semanas. Con SEO, entre 3 y 6 meses para resultados sólidos. El agente de IA está operativo en 48 horas.",
   },
   {
-    q: "¿Cuánto tiempo tarda la puesta en marcha?",
-    a: "Generalmente entre 24 y 48 horas desde que nos das la información de tu clínica. Nos encargamos de toda la configuración técnica.",
+    q: "¿Tengo que contratar todos los servicios?",
+    a: "No. Puedes empezar con lo que más necesitas ahora mismo y ampliar más adelante. En la primera llamada analizamos tu situación y te recomendamos por dónde empezar.",
   },
   {
-    q: "¿Qué pasa si el agente no sabe responder algo?",
-    a: "El agente está entrenado para derivar a tu equipo cuando la consulta es compleja o requiere un humano. Nunca dejará a un paciente sin respuesta.",
+    q: "¿Necesito tener conocimientos técnicos?",
+    a: "Para nada. Nos encargamos de todo: configuración, gestión y optimización. Tú solo tienes que aprobar el contenido y revisar los informes mensuales que te enviamos.",
   },
   {
     q: "¿Puedo cancelar en cualquier momento?",
-    a: "Sí. No hay permanencia. Puedes cancelar con 30 días de preaviso. Sin penalizaciones.",
+    a: "Sí. No hay permanencia. Puedes cancelar con 30 días de preaviso y sin penalizaciones. Queremos que te quedes porque ves resultados, no porque hayas firmado un contrato.",
   },
   {
-    q: "¿El agente funciona con cualquier tipo de clínica?",
-    a: "Sí. Trabajamos con clínicas de odontología general, ortodoncia, implantología, odontología estética e infantil. El agente se adapta al vocabulario y servicios específicos de cada clínica.",
+    q: "¿Trabajáis con clínicas de cualquier tamaño?",
+    a: "Sí. Trabajamos con clínicas unipersonales que están empezando y con grupos de clínicas consolidados. Adaptamos el plan a tu tamaño y tus objetivos.",
   },
 ];
 

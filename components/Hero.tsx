@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import WhatsAppMockup from "./WhatsAppMockup";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -11,6 +10,17 @@ const fadeUp = {
     transition: { duration: 0.6, delay, ease: "easeOut" },
   }),
 };
+
+const services = [
+  { icon: "🌐", label: "Web" },
+  { icon: "📍", label: "SEO local" },
+  { icon: "📢", label: "Google Ads" },
+  { icon: "📱", label: "Redes sociales" },
+  { icon: "⭐", label: "Reputación" },
+  { icon: "📧", label: "Email" },
+  { icon: "🤖", label: "Agente IA" },
+  { icon: "📊", label: "CRM" },
+];
 
 export default function Hero() {
   return (
@@ -30,8 +40,8 @@ export default function Hero() {
               custom={0}
               className="inline-flex items-center gap-2 bg-accent-soft border border-accent/20 rounded-full px-4 py-1.5 text-sm font-medium text-primary mb-6"
             >
-              <span>🤖</span>
-              <span>Agente IA para clínicas · WhatsApp 24/7</span>
+              <span>🦷</span>
+              <span>Agencia digital especializada en clínicas dentales</span>
             </motion.div>
 
             <motion.h1
@@ -41,7 +51,7 @@ export default function Hero() {
               custom={0.15}
               className="font-fraunces text-4xl md:text-5xl xl:text-6xl font-bold text-primary leading-tight mb-6"
             >
-              Tu clínica pierde pacientes cada noche que no contestas el WhatsApp
+              Más pacientes para tu clínica dental, sin complicaciones
             </motion.h1>
 
             <motion.p
@@ -51,7 +61,7 @@ export default function Hero() {
               custom={0.3}
               className="text-lg text-text-light leading-relaxed mb-8 max-w-xl"
             >
-              Dencitia instala un agente de inteligencia artificial en tu WhatsApp que responde al instante, resuelve dudas y agenda citas — incluso a las 11 de la noche.
+              Dencitia es la agencia digital especializada en clínicas dentales. Web, SEO, publicidad, redes sociales, agente de IA y más — todo en un solo equipo que habla tu idioma y conoce tu sector.
             </motion.p>
 
             <motion.div
@@ -62,10 +72,10 @@ export default function Hero() {
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
               <a
-                href="#como-funciona"
+                href="#servicios"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-7 py-4 rounded-full hover:bg-primary/90 transition-colors text-sm"
               >
-                Ver cómo funciona
+                Ver todos los servicios
               </a>
               <a
                 href="https://wa.me/34690064125?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Dencitia"
@@ -89,28 +99,52 @@ export default function Hero() {
               custom={0.6}
               className="flex flex-wrap gap-4 sm:gap-6"
             >
-              {["Sin permanencia", "Configurado en 48h", "Soporte incluido"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="flex items-center gap-2 text-sm text-text-light font-medium"
-                  >
-                    <span className="text-accent">✅</span>
-                    {item}
-                  </span>
-                )
-              )}
+              {["Solo clínicas dentales", "Sin permanencia", "Resultados en 30 días"].map((item) => (
+                <span key={item} className="flex items-center gap-2 text-sm text-text-light font-medium">
+                  <span className="text-accent">✅</span>
+                  {item}
+                </span>
+              ))}
             </motion.div>
           </div>
 
-          {/* Right — WhatsApp mockup */}
+          {/* Right — services grid */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
             className="flex justify-center"
           >
-            <WhatsAppMockup />
+            <div className="relative w-full max-w-sm">
+              {/* Central badge */}
+              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                <div className="bg-primary text-white rounded-2xl px-5 py-3 text-center shadow-2xl">
+                  <span className="font-fraunces text-xl font-bold block">Dencitia</span>
+                  <span className="text-accent text-xs font-medium">Tu agencia dental</span>
+                </div>
+              </div>
+
+              {/* Services grid */}
+              <div className="grid grid-cols-4 gap-3">
+                {services.map((s, i) => (
+                  <motion.div
+                    key={s.label}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
+                    className="bg-white rounded-2xl p-3 flex flex-col items-center gap-1.5 shadow-sm border border-gray-100 hover:border-accent/30 hover:shadow-md transition-all duration-300"
+                  >
+                    <span className="text-2xl">{s.icon}</span>
+                    <span className="text-[10px] font-medium text-text-dark text-center leading-tight">
+                      {s.label}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Glow */}
+              <div className="absolute inset-0 -z-10 blur-3xl opacity-15 rounded-3xl bg-accent scale-90" />
+            </div>
           </motion.div>
         </div>
       </div>

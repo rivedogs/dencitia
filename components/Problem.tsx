@@ -6,24 +6,24 @@ import { useRef } from "react";
 
 const problems = [
   {
+    icon: "🔍",
+    title: "Tu clínica no aparece cuando alguien busca 'dentista en [tu ciudad]'",
+    desc: "El 80% de los pacientes buscan en Google antes de elegir clínica. Si no apareces en los primeros resultados, directamente no existes.",
+  },
+  {
     icon: "🌙",
     title: "Pacientes que escriben fuera de horario y nadie responde",
-    desc: "El 40% de las consultas llegan por la noche o el fin de semana. Sin respuesta, van a la clínica de al lado.",
+    desc: "El 40% de las consultas llegan por la noche o el fin de semana. Sin respuesta inmediata, van a la clínica de al lado.",
   },
   {
-    icon: "📋",
-    title: "Tu recepcionista responde 50 veces al día las mismas preguntas",
-    desc: "Precios, horarios, si aceptáis su seguro... Tiempo que podría dedicar a pacientes ya en la clínica.",
+    icon: "⭐",
+    title: "Tus competidores tienen más reseñas y mejor presencia online",
+    desc: "Los pacientes leen reseñas antes de reservar. Una clínica con 80 reseñas en Google siempre gana a una con 12, aunque la tuya sea mejor.",
   },
   {
-    icon: "📅",
-    title: "Citas canceladas o pacientes que nunca terminan de confirmar",
-    desc: "Sin un seguimiento automático, muchos interesados se enfrían y no vuelven a escribir.",
-  },
-  {
-    icon: "😤",
-    title: "Competencia que ya está usando IA y atiende más rápido que tú",
-    desc: "Mientras tú lees este mensaje, otra clínica puede estar captando al paciente que te acaba de escribir.",
+    icon: "💸",
+    title: "Inviertes en publicidad pero no sabes si te trae pacientes reales",
+    desc: "Sin una estrategia bien configurada y medida, el dinero en anuncios se evapora sin resultados claros.",
   },
 ];
 
@@ -73,7 +73,7 @@ export default function Problem() {
             ¿Te suena esto?
           </h2>
           <p className="text-text-light text-lg max-w-xl mx-auto">
-            Situaciones que le cuestan dinero a tu clínica cada día
+            Situaciones que le cuestan pacientes y dinero a tu clínica cada día
           </p>
         </motion.div>
 

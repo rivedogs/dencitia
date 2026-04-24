@@ -4,50 +4,46 @@ import { motion } from "framer-motion";
 
 const plans = [
   {
-    name: "Esencial",
-    price: "297",
-    setup: "497",
-    tagline: "Ideal para empezar",
+    name: "Presencia",
+    price: "497",
+    tagline: "Para clínicas que quieren empezar a destacar online",
     popular: false,
     features: [
-      "Agente IA en WhatsApp 24/7",
-      "Responde preguntas frecuentes",
-      "Recoge datos del paciente interesado",
-      "Avisa a la clínica en tiempo real",
-      "Personalizado con tu identidad",
-      "Panel de conversaciones",
+      "Diseño y desarrollo web profesional",
+      "SEO local (Google Maps y búsqueda)",
+      "Optimización de reputación online",
+      "Gestión básica de redes sociales",
+      "Informe mensual de resultados",
       "Soporte por email",
     ],
-    cta: "Empezar con Esencial",
+    cta: "Empezar con Presencia",
   },
   {
-    name: "Profesional",
-    price: "447",
-    setup: "497",
-    tagline: "Para clínicas que quieren crecer",
+    name: "Crecimiento",
+    price: "897",
+    tagline: "Para clínicas que quieren llenar la agenda",
     popular: true,
     features: [
-      "Todo lo del plan Esencial",
-      "Gestión de citas por WhatsApp",
-      "Recordatorios automáticos (reduce no-shows)",
-      "Integración con Google Calendar / Calendly",
-      "Derivación inteligente a humano",
+      "Todo lo del plan Presencia",
+      "Campañas de Google Ads y Meta Ads",
+      "Agente IA para WhatsApp 24/7",
+      "Email marketing y automatizaciones",
+      "Gestión avanzada de redes sociales",
       "Soporte prioritario por WhatsApp",
     ],
-    cta: "Empezar con Profesional",
+    cta: "Empezar con Crecimiento",
   },
   {
-    name: "Clínica Digital",
+    name: "Agencia Completa",
     price: null,
-    setup: null,
-    tagline: "Automatización completa",
+    tagline: "Para clínicas que quieren dominar su mercado",
     popular: false,
     features: [
-      "Todo lo del plan Profesional",
+      "Todo lo del plan Crecimiento",
+      "CRM personalizado para tu clínica",
       "Integración con tu software de gestión",
-      "Seguimiento post-visita automático",
-      "Reactivación de pacientes inactivos",
-      "Informes mensuales de conversiones",
+      "Estrategia digital 360°",
+      "Informes avanzados de conversiones",
       "Gestor de cuenta dedicado",
     ],
     cta: "Solicitar presupuesto",
@@ -69,7 +65,7 @@ export default function Pricing() {
             Planes simples, sin letra pequeña
           </h2>
           <p className="text-text-light text-lg max-w-xl mx-auto">
-            Sin permanencia. Cancela cuando quieras. Setup incluido en el primer mes.
+            Sin permanencia. Cancela cuando quieras. Setup incluido.
           </p>
         </motion.div>
 
@@ -97,18 +93,10 @@ export default function Pricing() {
               )}
 
               <div>
-                <h3
-                  className={`font-fraunces text-2xl font-bold mb-1 ${
-                    plan.popular ? "text-white" : "text-primary"
-                  }`}
-                >
+                <h3 className={`font-fraunces text-2xl font-bold mb-1 ${plan.popular ? "text-white" : "text-primary"}`}>
                   {plan.name}
                 </h3>
-                <p
-                  className={`text-sm ${
-                    plan.popular ? "text-accent/80" : "text-text-light"
-                  }`}
-                >
+                <p className={`text-sm ${plan.popular ? "text-accent/80" : "text-text-light"}`}>
                   {plan.tagline}
                 </p>
               </div>
@@ -117,27 +105,15 @@ export default function Pricing() {
                 {plan.price ? (
                   <>
                     <div className="flex items-end gap-1">
-                      <span
-                        className={`font-fraunces text-5xl font-bold ${
-                          plan.popular ? "text-white" : "text-primary"
-                        }`}
-                      >
+                      <span className={`font-fraunces text-5xl font-bold ${plan.popular ? "text-white" : "text-primary"}`}>
                         {plan.price}€
                       </span>
-                      <span
-                        className={`text-sm mb-2 ${
-                          plan.popular ? "text-white/60" : "text-text-light"
-                        }`}
-                      >
+                      <span className={`text-sm mb-2 ${plan.popular ? "text-white/60" : "text-text-light"}`}>
                         /mes
                       </span>
                     </div>
-                    <p
-                      className={`text-xs mt-1 ${
-                        plan.popular ? "text-white/50" : "text-text-light"
-                      }`}
-                    >
-                      Setup inicial: {plan.setup}€ (único)
+                    <p className={`text-xs mt-1 ${plan.popular ? "text-white/50" : "text-text-light"}`}>
+                      Setup inicial incluido en el primer mes
                     </p>
                   </>
                 ) : (
@@ -146,7 +122,7 @@ export default function Pricing() {
                       Presupuesto personalizado
                     </p>
                     <p className="text-text-light text-xs mt-1">
-                      Valoramos juntos la integración con tu sistema
+                      Valoramos juntos la solución más adecuada
                     </p>
                   </>
                 )}
@@ -156,11 +132,7 @@ export default function Pricing() {
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <span className="text-accent mt-0.5 shrink-0">✅</span>
-                    <span
-                      className={plan.popular ? "text-white/80" : "text-text-dark"}
-                    >
-                      {f}
-                    </span>
+                    <span className={plan.popular ? "text-white/80" : "text-text-dark"}>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -186,9 +158,9 @@ export default function Pricing() {
           transition={{ delay: 0.4 }}
           className="text-center text-text-light text-sm mt-10"
         >
-          ¿No estás seguro de qué plan necesitas?{" "}
+          ¿No sabes qué plan necesitas?{" "}
           <a href="#contacto" className="text-accent hover:underline font-medium">
-            Escríbenos y te asesoramos sin compromiso.
+            Cuéntanos tu situación y te asesoramos sin compromiso.
           </a>
         </motion.p>
       </div>

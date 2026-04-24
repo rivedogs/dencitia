@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Dencitia | Agente IA para WhatsApp en clínicas dentales",
   description:
-    "Automatiza las respuestas de WhatsApp de tu clínica con IA. Atiende pacientes 24/7, agenda citas y reduce no-shows. Sin permanencia.",
+    "Agencia digital especializada en clínicas dentales. Web, SEO, publicidad, redes sociales, agente IA y CRM. Más pacientes para tu clínica, sin complicaciones.",
   openGraph: {
     title: "Dencitia | Agente IA para WhatsApp en clínicas dentales",
     description:
