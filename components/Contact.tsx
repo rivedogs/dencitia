@@ -233,7 +233,7 @@ export default function Contact() {
         >
           ¿Prefieres hablar ahora?{" "}
           <a
-            href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Dencitia"
+            href="https://wa.me/34690064125?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Dencitia"
             target="_blank"
             rel="noopener noreferrer"
             className="text-accent hover:underline font-medium"

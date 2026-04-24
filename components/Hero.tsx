@@ -68,7 +68,7 @@ export default function Hero() {
                 Ver cómo funciona
               </a>
               <a
-                href="https://wa.me/34600000000?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Dencitia"
+                href="https://wa.me/34690064125?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Dencitia"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-7 py-4 rounded-full hover:bg-primary hover:text-white transition-colors text-sm"
