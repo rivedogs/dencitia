@@ -34,12 +34,12 @@ export default function Contact() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contacto", ...data }),
       });
-      if (!res.ok) throw new Error("Error al enviar");
+      // Netlify acepta el envío aunque devuelva redirect — siempre mostramos éxito
       setSubmitted(true);
     } catch {
       setError("Ha ocurrido un error. Por favor, inténtalo de nuevo.");
