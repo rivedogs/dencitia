@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "¿El agente funciona con cualquier tipo de clínica?",
-    a: "Sí. Tenemos experiencia con clínicas dentales, de fisioterapia, medicina estética y centros de salud privados. El agente se adapta al vocabulario y servicios de cada clínica.",
+    a: "Sí. Trabajamos con clínicas de odontología general, ortodoncia, implantología, odontología estética e infantil. El agente se adapta al vocabulario y servicios específicos de cada clínica.",
   },
 ];
 

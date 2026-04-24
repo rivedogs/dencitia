@@ -147,9 +147,11 @@ export default function Contact() {
                   className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-accent transition-colors appearance-none"
                 >
                   <option value="" className="text-gray-800">Selecciona...</option>
-                  <option value="dental" className="text-gray-800">Dental</option>
-                  <option value="fisioterapia" className="text-gray-800">Fisioterapia</option>
-                  <option value="estetica" className="text-gray-800">Estética</option>
+                  <option value="dental-general" className="text-gray-800">Clínica dental general</option>
+                  <option value="dental-estetica" className="text-gray-800">Odontología estética</option>
+                  <option value="ortodoncia" className="text-gray-800">Ortodoncia</option>
+                  <option value="implantes" className="text-gray-800">Implantes</option>
+                  <option value="infantil" className="text-gray-800">Odontología infantil</option>
                   <option value="otra" className="text-gray-800">Otra</option>
                 </select>
                 {errors.tipo && (

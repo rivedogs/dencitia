@@ -15,11 +15,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dencitia | Agente IA para WhatsApp en clínicas dentales y estética",
+  title: "Dencitia | Agente IA para WhatsApp en clínicas dentales",
   description:
     "Automatiza las respuestas de WhatsApp de tu clínica con IA. Atiende pacientes 24/7, agenda citas y reduce no-shows. Sin permanencia.",
   openGraph: {
-    title: "Dencitia | Agente IA para WhatsApp en clínicas dentales y estética",
+    title: "Dencitia | Agente IA para WhatsApp en clínicas dentales",
     description:
       "Automatiza las respuestas de WhatsApp de tu clínica con IA. Atiende pacientes 24/7, agenda citas y reduce no-shows. Sin permanencia.",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dencitia | Agente IA para WhatsApp en clínicas dentales y estética",
+    title: "Dencitia | Agente IA para WhatsApp en clínicas dentales",
     description:
       "Automatiza las respuestas de WhatsApp de tu clínica con IA. Atiende pacientes 24/7, agenda citas y reduce no-shows. Sin permanencia.",
   },
