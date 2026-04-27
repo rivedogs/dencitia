@@ -68,11 +68,14 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 text-accent text-sm font-medium mb-6">
+            🎁 Análisis gratuito · Sin compromiso · Respuesta en 24h
+          </div>
           <h2 className="font-fraunces text-4xl md:text-5xl font-bold text-white mb-4">
-            ¿Listo para no perder más pacientes?
+            Descubre qué le falta a tu clínica para crecer online
           </h2>
           <p className="text-white/70 text-lg">
-            Cuéntanos cómo es tu clínica y te preparamos una demo gratuita en 24 horas.
+            Cuéntanos tu situación y te hacemos un análisis gratuito de tu presencia digital con los pasos exactos a seguir.
           </p>
         </motion.div>
 

@@ -11,33 +11,51 @@ const fadeUp = {
   }),
 };
 
-const services = [
-  { icon: "🌐", label: "Web" },
-  { icon: "📍", label: "SEO local" },
-  { icon: "📢", label: "Google Ads" },
-  { icon: "📱", label: "Redes sociales" },
-  { icon: "⭐", label: "Reputación" },
-  { icon: "📧", label: "Email" },
-  { icon: "🤖", label: "Agente IA" },
-  { icon: "📊", label: "CRM" },
+const results = [
+  {
+    icon: "📍",
+    metric: "Top 3 en Google Maps",
+    detail: "en tu ciudad en 90 días",
+    color: "bg-blue-50 border-blue-100",
+    iconBg: "bg-blue-100",
+  },
+  {
+    icon: "📈",
+    metric: "+40% nuevos pacientes",
+    detail: "de media en los primeros 3 meses",
+    color: "bg-accent-soft border-accent/20",
+    iconBg: "bg-accent/10",
+  },
+  {
+    icon: "⭐",
+    metric: "Más y mejores reseñas",
+    detail: "estrategia de reputación incluida",
+    color: "bg-amber-50 border-amber-100",
+    iconBg: "bg-amber-100",
+  },
+  {
+    icon: "🤖",
+    metric: "WhatsApp 24/7",
+    detail: "agente IA que nunca deja sin respuesta",
+    color: "bg-purple-50 border-purple-100",
+    iconBg: "bg-purple-100",
+  },
 ];
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-surface">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent-soft rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
+      {/* Background blobs */}
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-accent-soft rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left — copy */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+          {/* LEFT — copy */}
           <div>
             <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0}
+              variants={fadeUp} initial="hidden" animate="visible" custom={0}
               className="inline-flex items-center gap-2 bg-accent-soft border border-accent/20 rounded-full px-4 py-1.5 text-sm font-medium text-primary mb-6"
             >
               <span>🦷</span>
@@ -45,37 +63,33 @@ export default function Hero() {
             </motion.div>
 
             <motion.h1
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0.15}
-              className="font-fraunces text-4xl md:text-5xl xl:text-6xl font-bold text-primary leading-tight mb-6"
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.15}
+              className="font-fraunces text-4xl md:text-5xl xl:text-[3.5rem] font-bold text-primary leading-tight mb-6"
             >
-              Más pacientes para tu clínica dental, sin complicaciones
+              Más pacientes para tu clínica dental,{" "}
+              <span className="relative inline-block">
+                sin complicaciones
+                <span className="absolute -bottom-1 left-0 right-0 h-1 bg-accent rounded-full" />
+              </span>
             </motion.h1>
 
             <motion.p
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0.3}
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.3}
               className="text-lg text-text-light leading-relaxed mb-8 max-w-xl"
             >
-              Dencitia es la agencia digital especializada en clínicas dentales. Web, SEO, publicidad, redes sociales, agente de IA y más — todo en un solo equipo que habla tu idioma y conoce tu sector.
+              Nos encargamos de toda tu presencia digital — web, SEO, publicidad, redes sociales y más. Tú te dedicas a tus pacientes. Nosotros a traerte más.
             </motion.p>
 
+            {/* CTAs */}
             <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0.45}
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.45}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
               <a
-                href="#servicios"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-white font-semibold px-7 py-4 rounded-full hover:bg-primary/90 transition-colors text-sm"
+                href="#contacto"
+                className="inline-flex items-center justify-center gap-2 bg-accent text-primary font-bold px-8 py-4 rounded-full hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/30 text-sm"
               >
-                Ver todos los servicios
+                Solicita tu análisis gratuito →
               </a>
               <a
                 href="https://wa.me/34690064125?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20Dencitia"
@@ -87,65 +101,89 @@ export default function Hero() {
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                   <path d="M12 0C5.373 0 0 5.373 0 12c0 2.119.553 4.107 1.517 5.833L.057 23.543a.75.75 0 00.9.9l5.71-1.46A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-2.04 0-3.95-.55-5.59-1.507l-.4-.23-4.143 1.06 1.082-3.956-.261-.416A10.468 10.468 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z" />
                 </svg>
-                Hablar con nosotros
+                Hablar por WhatsApp
               </a>
             </motion.div>
 
             {/* Trust signals */}
             <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={0.6}
-              className="flex flex-wrap gap-4 sm:gap-6"
+              variants={fadeUp} initial="hidden" animate="visible" custom={0.6}
+              className="flex flex-wrap gap-5"
             >
-              {["Solo clínicas dentales", "Sin permanencia", "Resultados en 30 días"].map((item) => (
+              {[
+                "Solo clínicas dentales",
+                "Sin permanencia",
+                "Resultados medibles",
+              ].map((item) => (
                 <span key={item} className="flex items-center gap-2 text-sm text-text-light font-medium">
-                  <span className="text-accent">✅</span>
+                  <span className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center text-accent text-xs">✓</span>
                   {item}
                 </span>
               ))}
             </motion.div>
           </div>
 
-          {/* Right — services grid */}
+          {/* RIGHT — result cards */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="flex justify-center"
+            className="flex flex-col gap-4 max-w-sm mx-auto w-full"
           >
-            <div className="relative w-full max-w-sm">
-              {/* Central badge */}
-              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <div className="bg-primary text-white rounded-2xl px-5 py-3 text-center shadow-2xl">
-                  <span className="font-fraunces text-xl font-bold block">Dencitia</span>
-                  <span className="text-accent text-xs font-medium">Tu agencia dental</span>
-                </div>
+            {/* Header card */}
+            <div className="bg-primary rounded-2xl px-6 py-4 flex items-center justify-between">
+              <div>
+                <p className="font-fraunces text-white font-bold text-lg">Dencitia</p>
+                <p className="text-accent text-xs font-medium">Tu agencia dental de confianza</p>
               </div>
+              <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-xl">
+                🦷
+              </div>
+            </div>
 
-              {/* Services grid */}
-              <div className="grid grid-cols-4 gap-3">
-                {services.map((s, i) => (
-                  <motion.div
-                    key={s.label}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
-                    className="bg-white rounded-2xl p-3 flex flex-col items-center gap-1.5 shadow-sm border border-gray-100 hover:border-accent/30 hover:shadow-md transition-all duration-300"
+            {/* Result cards */}
+            {results.map((r, i) => (
+              <motion.div
+                key={r.metric}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                className={`rounded-2xl border p-4 flex items-center gap-4 ${r.color}`}
+              >
+                <div className={`w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 ${r.iconBg}`}>
+                  {r.icon}
+                </div>
+                <div>
+                  <p className="font-semibold text-primary text-sm leading-tight">{r.metric}</p>
+                  <p className="text-text-light text-xs mt-0.5">{r.detail}</p>
+                </div>
+              </motion.div>
+            ))}
+
+            {/* Bottom social proof */}
+            <div className="bg-white border border-gray-100 rounded-2xl px-5 py-3 flex items-center gap-3 shadow-sm">
+              <div className="flex -space-x-2">
+                {["#00E5B4", "#0A1628", "#6B7280"].map((c, i) => (
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white"
+                    style={{ backgroundColor: c }}
                   >
-                    <span className="text-2xl">{s.icon}</span>
-                    <span className="text-[10px] font-medium text-text-dark text-center leading-tight">
-                      {s.label}
-                    </span>
-                  </motion.div>
+                    {["A", "B", "C"][i]}
+                  </div>
                 ))}
               </div>
-
-              {/* Glow */}
-              <div className="absolute inset-0 -z-10 blur-3xl opacity-15 rounded-3xl bg-accent scale-90" />
+              <div>
+                <p className="text-primary font-semibold text-xs">+20 clínicas dentales confían en nosotros</p>
+                <div className="flex gap-0.5 mt-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-amber-400 text-xs">★</span>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
